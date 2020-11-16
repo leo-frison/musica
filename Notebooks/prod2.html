@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>Tu Notebook Lp | Looking for energy</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="images/logoico.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat:300,400,700%7CPoppins:300,400,500,700,900">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/imagehover.min.css">
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+    <link rel="stylesheet" href="/css/estilos.css">
+  </head>
+
+  <body>
+    <br>
+    <a class="boton_personalizado" href="javascript: history.go(-1)">⬅️</a>
+    <style type="text/css">
+      .boton_personalizado{
+        text-decoration: none;
+        padding: 2px;
+        margin-left: 50px;
+        font-weight: 600;
+        font-size: 75px;
+        color: #ffffff;
+      }
+      .boton_personalizado:hover{
+        color: #1883ba;
+        background-color: #ffffff;
+      }
+    </style>
+    
+      
+      <br></br>
+
+
+      <div id="contenedor-slider" class="contenedor-slider">
+        <div id="slider" class="slider">
+           <section class="slider__section"><img src="/images/notebooks/Dellgaming/dellg1.jpg" class="slider__img"></section>
+           <section class="slider__section"><img src="/images/notebooks/Dellgaming/dellg2.jpg" class="slider__img"></section>
+           <section class="slider__section"><img src="/images/notebooks/Dellgaming/dellg3.jpg" class="slider__img"></section>
+           <section class="slider__section"><img src="/images/notebooks/Dellgaming/dellg4.jpg" class="slider__img"></section>
+         
+           
+         </div>
+         <div id="btn-prev" class="btn-prev">&#60;</div>
+         <div id="btn-next" class="btn-next">&#62;</div>
+        </div>
+            
+        <br></br>
+        <br></br>
+        
+
+
+
+    <script src="/js/core.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="/path/to/jquery.min.js"></script> 
+    <script src="/path/to/jquery.malihu.PageScroll2id.js"></script> 
+
+
+
+<script >
+      //almacenar slider en una variable
+var slider = $('#slider');
+//almacenar botones
+var siguiente = $('#btn-next');
+var anterior = $('#btn-prev');
+
+//mover ultima imagen al primer lugar
+$('#slider .slider__section:last').insertBefore('#slider .slider__section:first');
+//mostrar la primera imagen con un margen de -100%
+slider.css('margin-left', '-'+100+'%');
+
+function moverD() {
+	slider.animate({
+		marginLeft:'-'+200+'%'
+	} ,700, function(){
+		$('#slider .slider__section:first').insertAfter('#slider .slider__section:last');
+		slider.css('margin-left', '-'+100+'%');
+	});
+}
+
+function moverI() {
+	slider.animate({
+		marginLeft:0
+	} ,700, function(){
+		$('#slider .slider__section:last').insertBefore('#slider .slider__section:first');
+		slider.css('margin-left', '-'+100+'%');
+	});
+}
+
+function autoplay() {
+	interval = setInterval(function(){
+		moverD();
+	}, 5000);
+}
+siguiente.on('click',function() {
+	moverD();
+	clearInterval(interval);
+	autoplay();
+});
+
+anterior.on('click',function() {
+	moverI();
+	clearInterval(interval);
+	autoplay();
+});
+
+
+autoplay();
+
+
+
+
+</script>
+       
+
+
+
+
+    
+  </body>
+</html>
